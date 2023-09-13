@@ -5,7 +5,7 @@ import com.google.gson.*;
 
 public class FlightFeed {
 	
-	private static final String OPEN_SKY_BASE_URL = "https://opensky-network.org/api/states/all";
+	private static final String OPEN_SKY_BASE_URL = "https://students.cs.byu.edu/~cs340ta/observer/index.php";
 	
 	// Flight property
 	private Flight _flight;	
