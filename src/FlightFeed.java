@@ -3,17 +3,18 @@ import java.net.*;
 import java.util.*;
 import com.google.gson.*;
 
-public class FlightFeed {
+public class FlightFeed extends Subject {
 	
 	private static final String OPEN_SKY_BASE_URL = "https://students.cs.byu.edu/~cs340ta/observer/index.php";
 	
 	// Flight property
-	private Flight _flight;	
+	private Flight _flight;
 	public Flight getFlight() {
 		return _flight;
 	}
 	private void setFlight(Flight value) {
 		_flight = value;
+		notifyObservers(_flight);
 	}
 	
 	public void start() {
@@ -45,7 +46,7 @@ public class FlightFeed {
 						
 						// Flight info changed
 						setFlight(newFlight);					
-						System.out.println(_flight.toString());
+						//System.out.println(_flight.toString());
 					}
 				}
 				else {
